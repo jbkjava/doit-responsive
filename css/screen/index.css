@@ -76,8 +76,8 @@
 }
 
 .container {
-  width: 80%;
-  min-width: 1132px;
+  width: 90%;
+  max-width: 1132px;
   margin: 0 auto;
 }
 
@@ -393,7 +393,6 @@ input:not(input[type="submit"])::placeholder {
 
   .intro .container h2 {
     width: 45%;
-    text-align: left;
   }
 
   .intro .container p {
@@ -405,8 +404,8 @@ input:not(input[type="submit"])::placeholder {
   }
 
   .sports .container {
-    margin: 0;
     width: 100%;
+    max-width: 1440px;
   }
 
   .sports__list {
@@ -433,5 +432,11 @@ input:not(input[type="submit"])::placeholder {
 
   .contact .container .contact__form {
     width: 75%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .intro .container h2 {
+    text-align: left;
   }
 }

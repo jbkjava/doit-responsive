@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 18px 5%;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.logo {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1130px;
+  margin: 0 auto;
+}
