@@ -1,5 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 .header {
-  padding: 10px 15px;
+  padding: 20px 20px;
   position: relative;
 }
 
@@ -19,6 +23,14 @@
 .header__title-box h1,
 .header__title-box span {
   cursor: pointer;
+}
+
+.header__navi-list {
+  display: none;
+}
+
+.header__navi-item {
+  text-transform: uppercase;
 }
 
 .header__menu-list {
@@ -52,14 +64,10 @@
 }
 
 .logo__image,
-.sports__image {
+.sports__image,
+.blog__image {
   width: 100%;
   max-width: 100%;
-}
-
-.main {
-  padding: 0px 20px;
-  cursor: default;
 }
 
 .intro {
@@ -67,60 +75,94 @@
   margin-bottom: 100px;
 }
 
+.container {
+  width: 80%;
+  min-width: 1132px;
+  margin: 0 auto;
+}
+
 .intro h2 {
   font-size: 46px;
   color: #339af0;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
   text-transform: uppercase;
 }
 
 .intro p {
   line-height: 30px;
-  font-size: 16px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
+  position: relative;
+}
+
+.intro p::before {
+  display: none;
+  content: "";
+  position: absolute;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  left: -20px;
+  top: 15px;
 }
 
 .goal {
   text-align: center;
-  margin-bottom: 100px;
-}
-
-.goal__item {
-  margin-bottom: 50px;
+  padding-bottom: 80px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 80px;
 }
 
 .goal__item span {
   color: #183173;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   display: block;
 }
 
 .goal__item h4 {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   color: #339af0;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 600;
 }
 
 .goal__item p {
-  line-height: 25px;
+  line-height: 30px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 1);
 }
 
-.sports {
-  margin-bottom: 60px;
+.sports::after {
+  content: "";
+  display: block;
+  width: 50px;
+  padding-top: 80px;
+  margin: 0 auto;
+  border-bottom: 2px solid blue;
+  margin-bottom: 90px;
 }
 
-.sports li {
+.section-title {
+  text-align: center;
+  font-size: 42px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  color: #339af0;
+  font-weight: 600;
+}
+
+.sports__item {
   margin-bottom: 15px;
   position: relative;
 }
 
-.sports li:hover .sports__tag {
+.sports__item:hover .sports__tag {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.sports li:hover .sports__info-box {
+.sports__item:hover .sports__info-box {
   opacity: 1;
 }
 
@@ -135,11 +177,9 @@
 
 .sports__info-box {
   display: flex;
-  background: linear-gradient(to right, black, rgba(0, 0, 0, 0.4));
+  background: linear-gradient(to right, black, rgba(0, 0, 0, 0.1));
   padding: 5px 10px;
   color: white;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
 }
 
 .sports__info-icon {
@@ -160,4 +200,238 @@
   font-size: 20px;
   margin-bottom: 4px;
   color: #339af0;
+}
+
+.blog {
+  margin-bottom: 160px;
+}
+
+.blog__item {
+  margin-bottom: 60px;
+}
+
+.blog__image {
+  margin-bottom: 8px;
+}
+
+.blog__item time {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.blog__item p {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 30px;
+}
+
+.contact__form input,
+textarea {
+  display: block;
+
+  width: 100%;
+  border: none;
+}
+
+.contact__form input {
+  padding: 15px 15px;
+}
+
+.contact__form textarea {
+  padding: 20px 15px;
+}
+
+.contact__form textarea,
+input:not(input[type="submit"]) {
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.contact__form textarea::placeholder,
+input:not(input[type="submit"])::placeholder {
+  color: #183173;
+}
+
+.contact__form input:not(input[type="submit"]):focus,
+.contact__form textarea:focus {
+  border-color: #339af0;
+}
+
+.contact__form input:not(input[type="submit"]):focus::placeholder,
+.contact__form textarea:focus::placeholder {
+  color: #339af0;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contact__form-box {
+  width: 100%;
+}
+
+.contact__form-submit {
+  text-align: right;
+}
+
+.contact__form textarea {
+  resize: none;
+}
+
+.contact__form input[type="submit"] {
+  color: white;
+  background-color: #183173;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 20px 15px;
+}
+
+.footer {
+  color: #183173;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.footer span {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+/*tablet responsive*/
+@media screen and (min-width: 500px) {
+  .sports__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sports__item {
+    width: 49%;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .blog__list {
+    display: flex;
+  }
+
+  .blog__item {
+    margin-right: 10px;
+  }
+
+  .blog__item:last-child {
+    margin-right: 0px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 20px 50px;
+  }
+
+  .header__title-box span {
+    display: none;
+  }
+  .header__navi-list {
+    display: flex;
+  }
+
+  .header__navi-item {
+    margin-left: 20px;
+    font-size: 18px;
+  }
+
+  .goal__list {
+    display: flex;
+  }
+
+  .goal__item {
+    margin-right: 25px;
+  }
+
+  .goal__item:last-child {
+    margin-right: 0;
+  }
+
+  .contact__form-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .contact__form-column {
+    width: 100%;
+  }
+
+  .contact__form-column:first-child {
+    margin-right: 20px;
+  }
+
+  .contact__form-column input:nth-child(3),
+  .contact__form-column textarea {
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo {
+    margin-bottom: 100px;
+  }
+
+  .intro .container,
+  .blog .container,
+  .contact .container {
+    display: flex;
+  }
+
+  .intro .container h2 {
+    width: 45%;
+    text-align: left;
+  }
+
+  .intro .container p {
+    width: 55%;
+  }
+
+  .intro .container p::before {
+    display: block;
+  }
+
+  .sports .container {
+    margin: 0;
+    width: 100%;
+  }
+
+  .sports__list {
+    flex-wrap: wrap;
+  }
+  .sports__item {
+    width: 25%;
+    margin-bottom: 0px;
+  }
+
+  .blog .container .section-title {
+    width: 45%;
+    text-align: left;
+  }
+
+  .intro .container .blog__list {
+    width: 55%;
+  }
+
+  .contact .container .section-title {
+    width: 25%;
+    text-align: left;
+  }
+
+  .contact .container .contact__form {
+    width: 75%;
+  }
 }
